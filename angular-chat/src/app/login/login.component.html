@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="header">
+  <div matRipple class="title-left mat-h1" [routerLink]="['/login']">
+    <strong>TChat Epsi</strong>
+  </div>
+</mat-toolbar>
+
+
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+    
+      <!-- Username -->
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Username" formControlName="user" />
+        <!-- error -->
+        <mat-error *ngIf="errorHandling('user', 'required')">
+          You must provide a<strong> Username</strong>
+        </mat-error>
+      </mat-form-field>
+   
+      <button type="submit" mat-flat-button color="primary" [disabled]="!myForm.valid">
+        Connect
+      </button>
+   
+  </form>

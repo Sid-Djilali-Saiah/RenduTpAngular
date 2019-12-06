@@ -1,0 +1,24 @@
+.title-left{
+    margin-left: 1em;
+    margin-top:0.5em;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.channels {
+    padding: 2%;
+    background-color: dimgray;
+    width: 20%;
+    color: #fff;
+}
+
+.chat {
+    padding: 2%;
+}

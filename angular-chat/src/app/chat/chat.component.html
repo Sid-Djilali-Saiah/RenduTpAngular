@@ -1,0 +1,40 @@
+<mat-toolbar color="primary" class="header">
+  <div matRipple class="title-left mat-h1" [routerLink]="['/login']">
+    <strong>TChat Epsi</strong>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container style="height: 100%">
+  <mat-sidenav class="channels" mode="side" opened>
+    <h2>Channels</h2>
+    <mat-list>
+      <mat-list-item style="color: #fff" *ngFor="let channel of channels">{{channel.name}}<mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="chat">
+    <mat-card>
+      <mat-card-title>Channel : </mat-card-title>
+
+      <mat-card-content>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut aspernatur sapiente, illum dolore tenetur voluptatum tempora id minus ab sed doloremque voluptate et cupiditate modi. Dicta illo similique incidunt qui.
+      </mat-card-content>
+
+      <mat-card-actions>
+        <form [formGroup]="myMessage" (ngSubmit)="onSend()" novalidate>
+            <mat-form-field style="width: 90%;">
+                <input matInput placeholder="Your message" formControlName="message" />
+                <!-- error -->
+                <mat-error *ngIf="errorHandling('message', 'required')">
+                  You can't send an <strong> empty</strong>message
+                </mat-error>
+            </mat-form-field>
+            &nbsp;&nbsp;
+            <button type="submit" mat-flat-button color="primary" [disabled]="!myMessage.valid">
+              Send
+            </button>
+        </form>
+      </mat-card-actions>
+    </mat-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>
